@@ -1,0 +1,12 @@
+.not-found {
+  text-transform: uppercase;
+  width: auto;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  h3 {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 400px;
+  }
+}

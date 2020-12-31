@@ -13,4 +13,8 @@ export class ShopService {
   getList() {
     return this._http.get(this.apiUrl);
   }
+
+  getProductDetail(id: string) {
+    return this._http.get(this.apiUrl+`/${id}`);
+  }
 }

@@ -1,11 +1,15 @@
-<ul>
-  <li *ngFor="let product of products">
-    <ul>
-      <li>{{ product.name }}</li>
-      <li>{{ product.image }}</li>
-      <li>{{ product.price }}</li>
-      <li>{{ product.sale }}</li>
-      <li>{{ product.percent }}</li>
-    </ul>
-  </li>
-</ul>
+<div class="row text-center">
+  <div class="col-lg-3 col-md-6 mb-4" *ngFor="let product of products">
+    <div class="card h-100" >
+      <img class="card-img-top" src="https://img.thuthuatphanmem.vn/uploads/2018/09/25/hinh-anh-hoa-cuc-cau-vong-dep_110817989.jpg" [alt]="product.name">
+      <div class="card-body">
+        <h4 class="card-title">{{ product.name }}</h4>
+        <p class="card-text">{{ product.price }} - {{ product.sale }} - {{ product.percent }}</p>
+      </div>
+      <div class="card-footer">
+        <a [routerLink]="['/product', product.id]" class="btn btn-primary">Detail</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
