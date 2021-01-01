@@ -10,8 +10,11 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
       <div class="button-group">
+        <a [routerLink]="['productOverview']" class="btn btn-primary">Overview</a>
+        <a [routerLink]="['productProject']" class="btn btn-success">Projects</a>
         <a [routerLink]="['/listProducts']" class="btn btn-secondary">Go back</a>
       </div>
     </div>
   </div>
+  <router-outlet></router-outlet>
 </div>
