@@ -1,0 +1,29 @@
+<form [formGroup]="formLogin" (ngSubmit)="submit(formLogin.value)">
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" placeholder="Username" name="username" formControlName="username">
+      <div class="col alert alert-danger" role="alert" *ngIf="formLogin.controls.username?.errors?.required && formLogin.controls.username?.touched">
+        User name is required
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" formControlName="password">
+      <div class="col alert alert-danger" role="alert" *ngIf="formLogin.controls.password?.errors?.required && formLogin.controls.password?.touched">
+        Password is required
+      </div>
+      <div class="col alert alert-danger" role="alert" *ngIf="formLogin.controls.password?.errors?.minlength && formLogin.controls.password?.dirty">
+        Password must be more than 3
+      </div>
+      <div class="col alert alert-danger" role="alert" *ngIf="formLogin.controls.password?.errors?.maxlength && formLogin.controls.password?.dirty">
+        Password must be less than 20
+      </div>
+    </div>
+  </div>
+  <div class="button-group">
+    <input type="submit" class="btn btn-primary" value="Log In" [disabled]="formLogin.invalid">
+  </div>
+</form>

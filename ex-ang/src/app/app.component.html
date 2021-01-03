@@ -12,6 +12,12 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="listProducts" routerLinkActive="active">List Products</a>
         </li>
+        <li class="nav-item" *ngIf="!_loginService.isLogin()">
+          <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="_loginService.isLogin()">
+          <a class="nav-link" routerLink="" routerLinkActive="active" (click)="logOut()">Log out</a>
+        </li>
       </ul>
     </div>
   </div>

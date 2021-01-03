@@ -10,6 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductDetailModule } from 'src/app/product-detail/product-detail.module';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
+import { CheckLoginGuard } from 'src/app/guard/check-login.guard';
+import { CheckSaveFormGuard } from 'src/app/guard/check-save-form.guard';
 
 @NgModule({
   declarations: [
@@ -17,15 +22,22 @@ import { ProductDetailModule } from 'src/app/product-detail/product-detail.modul
     ProductComponent,
     HomeComponent,
     NotFoundComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ProductDetailModule
+    ProductDetailModule,
+    ReactiveFormsModule
   ],
-  providers: [ShopService],
+  providers: [
+    ShopService,
+    LoginService,
+    CheckLoginGuard,
+    CheckSaveFormGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
