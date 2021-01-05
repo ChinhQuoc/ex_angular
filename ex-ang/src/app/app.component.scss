@@ -1,0 +1,22 @@
+@media screen and (max-width: 960px) {
+  .p-button {
+    margin-bottom: .5rem;
+
+    &:not(.p-button-icon-only) {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .p-buttonset {
+    .p-button {
+      margin-bottom: 0;
+    }
+  }
+}
+
+:host ::ng-deep .p-button.p-button-danger{
+  cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+}
