@@ -23,13 +23,27 @@ export class ProductComponent implements OnInit {
       this.currentPage = params['pageNumber'] || 1;
       this.filter = params['filter'] || '';
     });
+    this.loadData()
+    this.pages = [1, 2, 3, 4, 5];
+  }
 
+  delete(id: string) {
+    let confirmResult = confirm("Are you sure to delete this product?");
+    if (confirmResult) {
+      this.shopService.deleteProduct(id).subscribe(res => {
+        if(res) {
+          alert("Delete success!");
+          this.loadData();
+        }
+      })
+    }
+  }
+
+  loadData() {
     this.shopService.getList().subscribe(res => {
       return this.products = res;
     }, error => {
       console.log(error);
     });
-    this.pages = [1, 2, 3, 4, 5];
   }
-
 }

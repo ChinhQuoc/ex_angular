@@ -17,4 +17,12 @@ export class ShopService {
   getProductDetail(id: string) {
     return this._http.get(this.apiUrl+`/${id}`);
   }
+
+  deleteProduct(id: string) {
+    return this._http.delete(this.apiUrl+`/${id}`);
+  }
+
+  editProduct(id: string, data: any) {
+    return this._http.put(this.apiUrl+`/${id}`, data);
+  }
 }

@@ -9,6 +9,7 @@ import { ProductProjectComponent } from 'src/app/product-detail/product-project/
 import { LoginComponent } from 'src/app/login/login.component';
 import { CheckLoginGuard } from 'src/app/guard/check-login.guard';
 import { CheckSaveFormGuard } from 'src/app/guard/check-save-form.guard';
+import { ProductFormComponent } from 'src/app/product-form/product-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   // { path: '', redirectTo: 'listProducts', pathMatch: 'full' },
   { path: 'listProducts', component: ProductComponent, canActivate: [CheckLoginGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'editProduct/:id', component: ProductFormComponent },
   {
     path: 'product/:id', component: ProductDetailComponent, canDeactivate: [CheckSaveFormGuard],
     children: [

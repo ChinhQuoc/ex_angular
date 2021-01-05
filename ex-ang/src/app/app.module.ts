@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { CheckLoginGuard } from 'src/app/guard/check-login.guard';
 import { CheckSaveFormGuard } from 'src/app/guard/check-save-form.guard';
+import { ProductFormComponent } from './product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CheckSaveFormGuard } from 'src/app/guard/check-save-form.guard';
     HomeComponent,
     NotFoundComponent,
     ProductDetailComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
